@@ -1,0 +1,5 @@
+hand_landmarker.task: MediaPipe Hand Landmarker model (Apache-2.0, see ../vendor/mediapipe/LICENSE),
+from https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+
+mlp_asl.onnx, mlp_classes.json: asl-landmark-mlp by nocontextdoruk (CC BY-NC 4.0, see LICENSE-asl-landmark-mlp.txt),
+from https://huggingface.co/nocontextdoruk/asl-landmark-mlp. Used only by eval/evaluate.py for comparison, not by the app.

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASL to English</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✋</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="top">
+    <h1>ASL to English</h1>
+    <p class="lede">Fingerspell with one hand in front of your webcam. Hold each letter still until the ring fills.</p>
+  </header>
+
+  <main class="layout">
+    <section class="stage" aria-label="Camera">
+      <div class="viewport" id="viewport">
+        <video id="video" playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div class="viewport-msg" id="viewportMsg">Starting…</div>
+      </div>
+      <div class="source-row">
+        <p id="status" class="status" role="status">Loading…</p>
+        <div class="source-buttons">
+          <button type="button" id="useCamera">Use camera</button>
+          <label class="button" for="videoFile">Play a video file</label>
+          <input type="file" id="videoFile" accept="video/*" class="visually-hidden">
+        </div>
+      </div>
+    </section>
+
+    <div class="side">
+      <section class="card" aria-labelledby="signHeading">
+        <h2 id="signHeading">Current sign</h2>
+        <div class="sign-row">
+          <div class="sign-display">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+              <circle class="ring-fill" id="ring" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <span id="letter" class="letter">–</span>
+          </div>
+          <div class="sign-info">
+            <p id="confidence" class="confidence">No hand in view</p>
+            <ol id="candidates" class="candidates" aria-label="Closest letters"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="textHeading">
+        <h2 id="textHeading">Text</h2>
+        <p id="text" class="text" aria-live="polite"></p>
+        <div class="actions">
+          <button type="button" id="space">Space</button>
+          <button type="button" id="backspace">Delete</button>
+          <button type="button" id="clear">Clear</button>
+          <button type="button" id="speak" class="primary">Speak</button>
+          <button type="button" id="copy">Copy</button>
+        </div>
+        <p class="hint">Take your hand out of view to add a space. For a double letter (the LL in HELLO), drop your hand briefly between the two. Keys: <kbd>Space</kbd> <kbd>Backspace</kbd> <kbd>Enter</kbd> speaks.</p>
+      </section>
+    </div>
+
+    <details class="card wide" id="teach">
+      <summary><h2>Teach it your hand</h2><span class="summary-note" id="mineSummary"></span></summary>
+      <p class="hint">The app recognises letters by comparing your hand with 2,122 example hands from other people. Adding a few examples of your own hand makes it much more accurate for you. Pick a letter, press Record, and hold the sign for 2 seconds while moving your hand slightly. Only the 21 hand points are stored, in this browser; no images.</p>
+      <div class="letter-grid" id="letterGrid" role="group" aria-label="Choose a letter to record"></div>
+      <div class="actions">
+        <button type="button" id="record" class="primary">Record A</button>
+        <button type="button" id="exportMine">Export my samples</button>
+        <label class="button" for="importMine">Import</label>
+        <input type="file" id="importMine" accept="application/json,.json" class="visually-hidden">
+        <button type="button" id="clearMine" class="danger">Delete my samples</button>
+      </div>
+    </details>
+
+    <details class="card wide" id="settings">
+      <summary><h2>Settings</h2></summary>
+      <div class="settings-grid">
+        <label>Hold time <output id="holdMsOut"></output>
+          <input type="range" id="holdMs" min="400" max="1600" step="100">
+        </label>
+        <label>Minimum confidence <output id="minConfidenceOut"></output>
+          <input type="range" id="minConfidence" min="0.4" max="0.95" step="0.05">
+        </label>
+        <label>Space after hand is gone for <output id="spaceMsOut"></output>
+          <input type="range" id="spaceMs" min="800" max="3000" step="100">
+        </label>
+        <label class="check"><input type="checkbox" id="autoSpace"> Add spaces automatically</label>
+        <label class="check"><input type="checkbox" id="showSkeleton"> Draw the hand points</label>
+        <label class="check"><input type="checkbox" id="mirror"> Mirror the camera view</label>
+      </div>
+    </details>
+  </main>
+
+  <footer class="credits">
+    Hand tracking: <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker">MediaPipe Hand Landmarker</a> (Apache-2.0).
+    Example hands: <a href="https://huggingface.co/datasets/sid220/asl-now-fingerspelling">ASLNow! fingerspelling dataset</a> (MIT).
+    Everything runs in your browser; nothing is uploaded.
+  </footer>
+</body>
+</html>

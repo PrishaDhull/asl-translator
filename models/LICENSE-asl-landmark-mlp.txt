@@ -1,0 +1,30 @@
+ASL Hand Gesture Recognizer — License
+
+Copyright (c) 2026 Doruk Doğular (nocontextdoruk)
+
+This work (source code, trained models, and documentation) is licensed under the
+Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+Full legal text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by-nc/4.0/
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format.
+  - Adapt — remix, transform, and build upon the material.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit and cite this project (see
+    CITATION.cff), provide a link to the license, and indicate if changes were made.
+  - NonCommercial — You may NOT use the material for commercial purposes, including
+    resale, paid products/services, or any enterprise/commercial distribution.
+
+No additional restrictions — You may not apply legal terms or technological measures
+that legally restrict others from doing anything the license permits.
+
+NonCommercial use in research, education, and personal or open projects is welcome,
+provided attribution is given. For commercial licensing, contact the author.
+
+The dataset (ASL-HG) is the property of its original authors and is NOT covered by
+this license. See CITATION.cff and the README for dataset attribution.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

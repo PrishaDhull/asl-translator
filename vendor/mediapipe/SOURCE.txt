@@ -1,0 +1,2 @@
+Copied from the npm package @mediapipe/tasks-vision 1.0.1 (Apache-2.0), https://www.npmjs.com/package/@mediapipe/tasks-vision
+Kept locally so the app works without internet during a demo.

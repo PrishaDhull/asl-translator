@@ -1,0 +1,78 @@
+Photos test set: 661 hands
+
+Test on the photos (no one in them is in any reference or training data)
+  pretrained MLP                                       24 static letters  58.5%   all 26  53.3%
+  nearest neighbours (k=1, x,y,z), refs at 1.00        24 static letters  60.5%   all 26  61.9%
+  nearest neighbours (k=1, x,y), refs at 1.00          24 static letters  70.4%   all 26  70.8%
+  nearest neighbours (k=5, x,y,z), refs at 1.00        24 static letters  60.1%   all 26  61.1%
+  nearest neighbours (k=5, x,y), refs at 1.00          24 static letters  71.4%   all 26  71.3%
+  nearest neighbours (k=9, x,y,z), refs at 1.00        24 static letters  60.5%   all 26  60.7%
+  nearest neighbours (k=9, x,y), refs at 1.00          24 static letters  70.7%   all 26  70.0%
+  nearest neighbours (k=1, x,y,z), refs at 1.33        24 static letters  64.5%   all 26  65.1%
+  nearest neighbours (k=1, x,y), refs at 1.33          24 static letters  72.0%   all 26  71.6%
+  nearest neighbours (k=5, x,y,z), refs at 1.33        24 static letters  65.7%   all 26  66.0%
+  nearest neighbours (k=5, x,y), refs at 1.33          24 static letters  72.4%   all 26  72.2%
+  nearest neighbours (k=9, x,y,z), refs at 1.33        24 static letters  65.0%   all 26  64.6%
+  nearest neighbours (k=9, x,y), refs at 1.33          24 static letters  72.0%   all 26  71.9%
+  nearest neighbours (k=1, x,y,z), refs at 1.78        24 static letters  61.0%   all 26  61.7%
+  nearest neighbours (k=1, x,y), refs at 1.78          24 static letters  65.7%   all 26  66.0%
+  nearest neighbours (k=5, x,y,z), refs at 1.78        24 static letters  61.8%   all 26  62.6%
+  nearest neighbours (k=5, x,y), refs at 1.78          24 static letters  67.5%   all 26  67.8%
+  nearest neighbours (k=9, x,y,z), refs at 1.78        24 static letters  60.8%   all 26  61.1%
+  nearest neighbours (k=9, x,y), refs at 1.78          24 static letters  66.8%   all 26  66.7%
+
+Per letter, nearest neighbours (k=5, x,y), refs at 1.33
+    A:  72.4%  (n= 29)  confused with Sx7, Mx1
+    B:  91.3%  (n= 23)  confused with Wx1, Ox1
+    C:  35.3%  (n= 17)  confused with Ox5, Bx4
+    D:  16.7%  (n= 24)  confused with Xx18, Zx2
+    E:  66.7%  (n= 21)  confused with Ox3, Zx1
+    F:  93.1%  (n= 29)  confused with Bx1, Cx1
+    G:  88.9%  (n= 27)  confused with Zx3
+    H:  96.2%  (n= 26)  confused with Px1
+    I:  96.6%  (n= 29)  confused with Ox1
+    J:  47.1%  (n= 34)  confused with Qx6, Sx3
+    K:  69.2%  (n= 26)  confused with Vx4, Ux2
+    L:  67.9%  (n= 28)  confused with Gx7, Xx2
+    M:  66.7%  (n= 24)  confused with Zx4, Sx3
+    N:  37.5%  (n= 24)  confused with Sx12, Mx2
+    O:  82.6%  (n= 23)  confused with Mx1, Fx1
+    P:  56.5%  (n= 23)  confused with Gx3, Qx3
+    Q:  78.9%  (n= 19)  confused with Px4
+    R:  88.0%  (n= 25)  confused with Kx1, Ox1
+    S:  80.0%  (n= 30)  confused with Zx5, Ex1
+    T:  20.8%  (n= 24)  confused with Sx12, Ax4
+    U:  50.0%  (n= 24)  confused with Rx8, Vx4
+    V:  85.2%  (n= 27)  confused with Kx2, Ux1
+    W: 100.0%  (n= 23)  
+    X:  88.5%  (n= 26)  confused with Zx2, Qx1
+    Y:  80.8%  (n= 26)  confused with Ix4, Jx1
+    Z:  96.7%  (n= 30)  confused with Px1
+
+Per letter, pretrained MLP
+    A:  79.3%  (n= 29)  confused with Mx4, Ox2
+    B:  87.0%  (n= 23)  confused with Ox1, Cx1
+    C:  52.9%  (n= 17)  confused with Bx2, Mx2
+    D:   8.3%  (n= 24)  confused with Lx22
+    E:  52.4%  (n= 21)  confused with Mx9, Lx1
+    F:  86.2%  (n= 29)  confused with Ox1, Ax1
+    G:  77.8%  (n= 27)  confused with Ox6
+    H:  73.1%  (n= 26)  confused with Ox7
+    I:  79.3%  (n= 29)  confused with Mx4, Jx1
+    J:   8.8%  (n= 34)  confused with Qx7, Mx7
+    K:  11.5%  (n= 26)  confused with Ax10, Lx6
+    L:  96.4%  (n= 28)  confused with Ox1
+    M: 100.0%  (n= 24)  
+    N:  50.0%  (n= 24)  confused with Mx7, Tx3
+    O:  39.1%  (n= 23)  confused with Mx4, Lx3
+    P:  52.2%  (n= 23)  confused with Lx5, Ox3
+    Q:  84.2%  (n= 19)  confused with Ex1, Cx1
+    R:  80.0%  (n= 25)  confused with Lx2, Ax1
+    S:  36.7%  (n= 30)  confused with Mx18, Ax1
+    T:   8.3%  (n= 24)  confused with Mx19, Sx2
+    U:   0.0%  (n= 24)  confused with Rx19, Ax2
+    V:  77.8%  (n= 27)  confused with Ax3, Lx3
+    W:  95.7%  (n= 23)  confused with Ox1
+    X:   3.8%  (n= 26)  confused with Lx17, Mx6
+    Y:  61.5%  (n= 26)  confused with Ix6, Sx2
+    Z:   0.0%  (n= 30)  confused with Mx26, Qx2

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline test</title>
+  <style>
+    body { font: 15px/1.5 system-ui, sans-serif; margin: 24px; background: #fff; color: #16181d; }
+    @media (prefers-color-scheme: dark) { body { background: #111317; color: #eef0f4; } }
+    pre { font-size: 13px; white-space: pre-wrap; }
+    video { max-width: 240px; display: block; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <h1>Pipeline test</h1>
+  <p>Steps through a clip frame by frame, running the same hand tracker, classifier and
+  speller as the app, and shows the text it spells. Usage:
+  <code>tests/pipeline.html?video=../eval/samples/hello-world.mp4&amp;expect=HELLO%20WORLD</code></p>
+  <video id="video" muted playsinline></video>
+  <pre id="log">Loading…</pre>
+  <script type="module" src="pipeline.js"></script>
+</body>
+</html>
